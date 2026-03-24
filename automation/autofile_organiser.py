@@ -1,7 +1,7 @@
 #automation tool for auto file organizer
 import os
 import shutil
-path_to_organize = "/Users/anujakhatri/Downloads"
+path_to_organize = input("Enter the file")
 
 file_types = {
    "Images":[".jpg",".png",".jpeg",".gif",".bmp"],
