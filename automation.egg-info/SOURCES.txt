@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+automation/__init__.py
+automation/autofile_organiser.py
+automation/mail-sender.py
+automation.egg-info/PKG-INFO
+automation.egg-info/SOURCES.txt
+automation.egg-info/dependency_links.txt
+automation.egg-info/top_level.txt
