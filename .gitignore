@@ -3,3 +3,4 @@
 __pycache__
 dist
 automation.egg-info
+.DS_Store
