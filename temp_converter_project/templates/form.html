@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature converter app</title>
+</head>
+<body>
+<h2>Temperature converter</h2>
+<form action="/convert" method="POST">
+    {% csrf_token %}
+    <label>Enter temperature</label>
+    <input type="number" name="temp" step="any" required>
+    <br />
+    <label>Convert temperature</label>
+    <select name="scale">
+        <option value="celsius" >Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+    </select>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
