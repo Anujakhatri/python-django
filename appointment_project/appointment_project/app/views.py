@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from .db import get_connection, create_table, create_appointment, read_appointments, update_appointment, delete_appointment
+from .db import create_table, create_appointment, read_appointments, update_appointment, delete_appointment
 
 def index(request):
     create_table()
@@ -15,35 +15,61 @@ def index(request):
 def create(request):
     create_table()
     if request.method == "POST":
-        name = request.POST["name"]
-        contact = request.POST["contact"]
-        gender = request.POST["gender"]
-        date = request.POST["date"]
-        time = request.POST["time"]
-        reason = request.POST["reason"]
+        # syntax = request.POST.get(key, default_value)
+        name = request.POST.get("name", "").strip()
+        contact = request.POST.get("contact", "").strip()
+        gender = request.POST.get("gender", "Female")
+        date = request.POST.get("date", "")
+        time = request.POST.get("time", "")
+        reason = request.POST.get("reason", "").strip()
 
-        create_appointment(name, contact, gender, date, time, reason)
-        return redirect("list")
+        if name and contact and date and time:
+            try:
+                create_appointment(name, contact, gender, date, time, reason)
+                return redirect("list_appointments")
+            except Exception as e:
+                error= f"Error creating appointment: {str(e)}"
+                return render(request, "list_appointments")
+        else:
+            error = "Please fill in all required fields"
+            return render(request, "list.html", {"error": error})
 
-    return render(request, "list_appointments")
+    return render(request, "list.html")
 
 def list_appointments(request):
-    appointments = read_appointments()
+    try:
+        appointments = read_appointments()
+    except Exception as e:
+        appointments = []
+        error = f"Error loading appointments: {str(e)}"
+        return render(request, "success.html", {"error": error, "appointments": []})
     return render(request, "success.html", {"appointments": appointments})
 
 def update(request, id):
+    create_table()
+
     if request.method == "POST":
-        name = request.POST["name"]
-        contact = request.POST["contact"]
-        gender = request.POST["gender"]
-        date = request.POST["date"]
-        time = request.POST["time"]
-        reason = request.POST["reason"]
+        name = request.POST.get("name", "").strip()
+        contact = request.POST.get("contact", "").strip()
+        gender = request.POST.get("gender", "Female")
+        date = request.POST.get("date", "")
+        time = request.POST.get("time", "")
+        reason = request.POST.get("reason", "").strip()
 
-        update_appointment(id, name, contact, gender, date, time, reason)
-
-        return redirect("list_appointments")
-
+        if name and contact and date and time:
+            try:
+                update_appointment(id, name, contact, gender, date, time, reason)
+                return redirect("list_appointments")
+            except Exception as e:
+                error = f"Error updating appointment: {str(e)}"
+                return render(request, "edit.html", {"error": error, "id": id})
+        else:
+            error = "Please fill in all required fields"
+            return render(request, "edit.html", {"error": error, "id": id})
+    return render(request, "edit.html", {"id": id})
 def delete(request, id):
-    delete_appointment(id)
+    try:
+        delete_appointment(id)
+    except Exception as e:
+        print(f"Error deleting appointment: {str(e)}")
     return redirect("list_appointments")

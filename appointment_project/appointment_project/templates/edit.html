@@ -3,18 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-<h2>Edit Appointment</h2>
+<div class="container mt-5">
+    {% if error %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> {{ error }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
 
-<form method="POST">
-   {% csrf_token %}
-   Name: <input type="text" name="name" value="{{ data.1 }}">
-   Date: <input type="date" name="date" value="{{ data.2 }}">
-   Time: <input type="time" name="time" value="{{ data.3 }}">
-   Reason: <input type="text" name="reason" value="{{ data.4 }}">
-   <button type="submit">Update</button>
-</form>
+    <h2>Edit Appointment (ID: {{ id }})</h2>
+
+    <form method="POST" action="{% url 'update' id %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="name" name="name" required placeholder="Enter name">
+        </div>
+
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contact <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control" id="contact" name="contact" required placeholder="Enter phone number">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderM" value="Male">
+                    <label class="form-check-label" for="genderM">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderF" value="Female" checked>
+                    <label class="form-check-label" for="genderF">Female</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderO" value="Other">
+                    <label class="form-check-label" for="genderO">Other</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="time" class="form-label">Time <span class="text-danger">*</span></label>
+            <input type="time" class="form-control" id="time" name="time" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="reason" class="form-label">Reason</label>
+            <textarea class="form-control" id="reason" name="reason" rows="4"></textarea>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="confirmCheck" required>
+            <label class="form-check-label" for="confirmCheck">I confirm all details are correct</label>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-lg w-100">💾 Update Appointment</button>
+    </form>
+
+    <div style="margin-top: 20px; text-align: center;">
+        <a href="{% url 'list_appointments' %}" class="btn btn-secondary btn-sm">Cancel</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

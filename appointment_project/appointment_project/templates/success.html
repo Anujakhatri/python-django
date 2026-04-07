@@ -9,44 +9,61 @@
 </head>
 <body>
 <div class="container">
- <h1>Appointment created successfully!</h1>
+    <h1>Appointment created successfully!</h1>
+    {% if error %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> {{ error }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 
- <table class=" table table-striped table-bordered">
-    <thead class="table-dark">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Contact</th>
-        <th>Gender</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Reason</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
+    {% endif %}
 
-    <tbody>
-     {% for a in appointments %}
-    <tr>
-        <td>{{ a.0 }}</td>
-        <td>{{ a.1 }}</td>
-        <td>{{ a.2 }}</td>
-        <td>{{ a.3 }}</td>
-        <td>{{ a.4 }}</td>
-        <td>{{ a.5 }}</td>
-        <td>{{ a.6 }}</td>
+    <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <h2>All Appointments <span class="badge bg-primary"></span></h2>
+        <a href="{% url 'index' %}" class="btn btn-primary">➕ New Appointment</a>
+    </div>
 
-        <td>
-            <a href="/insert/{{a .0 }} ">Edit</a>
-            <a href="/delete/{{ a.0 }}" class="btn btn-danger btn-sm">Delete</a>
-        </td>
-    </tr>
-    {% endfor %}
-    </tbody>
- </table>
+    {% if appointments %}
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Gender</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Reason</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in appointments %}
+            <tr>
+                <td>{{ a.0 }}</td>
+                <td>{{ a.1 }}</td>
+                <td>{{ a.2 }}</td>
+                <td><span class="badge bg-info">{{ a.3 }}</span></td>
+                <td>{{ a.4 }}</td>
+                <td>{{ a.5 }}</td>
+                <td>{{ a.6 }}</td>
 
-    {% if not appointments %}
-    <div class="alert alert-info">No appointments found. <a href="/">Create one</a></div>
+                <td>
+                    <a href="{% url 'update' a.0 %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'delete' a.0 %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% else %}
+    <div class="alert alert-info">No appointments found. <a href="{% url 'index' %}" class="alert-link">Create one</a>
+    </div>
+
     {% endif %}
 </div>
 
