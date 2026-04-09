@@ -7,11 +7,6 @@ def index(request):
     create_table()
     return render(request, "list.html")
 
-    # conn = get_connection()
-    # print("test1")
-    # cursor = conn.cursor()
-    # print("connected")
-
 def create(request):
     create_table()
     if request.method == "POST":
@@ -28,8 +23,8 @@ def create(request):
                 create_appointment(name, contact, gender, date, time, reason)
                 return redirect("list_appointments")
             except Exception as e:
-                error= f"Error creating appointment: {str(e)}"
-                return render(request, "list_appointments")
+                error = f"Error creating appointment: {str(e)}"
+                return render(request, "list.html", {"error": error})
         else:
             error = "Please fill in all required fields"
             return render(request, "list.html", {"error": error})
