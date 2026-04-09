@@ -14,7 +14,6 @@ def get_connection():
         port="5432",
     )
 
-# #create a table
 def create_table():
     conn = get_connection()
     cursor = conn.cursor()
