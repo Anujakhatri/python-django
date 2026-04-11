@@ -1,5 +1,4 @@
 from django.db import models
-from django.template.defaultfilters import length
 
 
 # Create your models here.
@@ -13,8 +12,8 @@ class Doctor(models.Model):
 
 class Patient(models.Model):
     name = models.CharField(max_length=50)
-    age = models.IntegerField(max_length=3)
-    contact = models.IntegerField(max_length=15)
+    age = models.IntegerField()
+    contact = models.CharField(max_length=15)
     reason = models.CharField(max_length=100)
 
     def __str__(self):

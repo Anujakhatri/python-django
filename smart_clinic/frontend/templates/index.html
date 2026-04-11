@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>index page</title>
+    <meta charset="UTF-8">
+    <title>Doctor clinic Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
-<h1>Your Doctor List</h1>
-<button><a href="/doctors/" >Doctor List</a></button>
+    <h1>Doctor List</h1>
+    <ul id="doctors_list"></ul>
+    <div><a href="http://127.0.0.1:8000/admin/" target="_blank">admin site</a></div>
+    <div><a href="http://127.0.0.1:8000/doctors/" target="_blank">doctors list site</a></div>
+    <hr />
+
+    <script>
+        fetch("http://127.0.0.1:8000/doctors/")
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('doctors_list');
+                data.forEach(doctor => {
+                    const li = document.createElement('li');
+                    li.innerText = doctor.name;
+                    list.appendChild(li);
+                });
+            }).catch(error => console.errors("error is :", error))
+    </script>
+
+    <!--patient data-->
+    <h1>Patient List</h1>
+    <ul id="patient_list"></ul>
+
+    <div><a href="http://127.0.0.1:8000/patients/" target="_blank">patients list site</a></div>
+    <hr />
+    <script>
+        fetch("http://127.0.0.1:8000/patients/")
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('patient_list');
+                data.forEach(patient => {
+                    const li = document.createElement('li');
+                    li.innerText = patient.name;
+                    list.appendChild(li);
+                });
+            }).catch(error => console.errors("error is :", error))
+    </script>
+
+    <!--appointment data-->
+    <h1>Appointment List</h1>
+    <ul id="appointment_list"></ul>
+
+    <div><a href="http://127.0.0.1:8000/appointments/" target="_blank">appointments list site</a></div>
+    <hr />
+    <script>
+        fetch("http://127.0.0.1:8000/appointments/")
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('appointment_list');
+                data.forEach(appointment => {
+                    const li = document.createElement('li');
+                    li.innerText = `Patient ${appointment.patient.name} visiting Doctor ${appointment.doctor.name} on ${new Date(appointment.date).toLocaleDateString()} (${appointment.status})`;
+                    list.appendChild(li);
+                });
+            }).catch(error => console.errors("error is :", error))
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
