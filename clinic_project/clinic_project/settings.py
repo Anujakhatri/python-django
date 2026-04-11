@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'clinic',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -52,11 +53,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'clinic_project.urls'
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': None
+}
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/ 'frontend'/ 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
