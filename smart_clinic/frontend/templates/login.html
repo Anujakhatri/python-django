@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdn.datatables.net/2.3.7/css/dataTables.bootstrap5.css" rel="stylesheet">
+
 </head>
 <body>
-$END$
+<div class="container">
+
+
+<h2>Login page </h2>
+<form>
+ <div class="mb-3">
+   <label for="username" class="form-label">username</label>
+   <input type="text" class="form-control" id="username" >
+
+ </div>
+
+ <div class="mb-3">
+   <label for="password" class="form-label">Password</label>
+   <input type="password" class="form-control" id="password">
+ </div>
+
+
+ <button class="btn btn-primary" type="submit" onclick="login(event)">Submit</button>
+</form>
+</div>
+<script>
+    function login(event){
+        if (event) event.preventDefault();
+        fetch("/api/token/",{
+            method:"POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body:JSON.stringify({
+                username : document.getElementById('username').value,
+                password : document.getElementById('password').value
+            })
+        })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                //save token in our local storage
+                if (data.access){
+                   localStorage.setItem("token",data.access);
+                   //redirect to home page
+                   window.location.href = "/"
+                }
+                else{
+                 // Alert the actual error message from the server if possible
+                 const errorMsg = data.detail || data.error || "Login failed. Please check your credentials.";
+                 alert(errorMsg);
+                 console.log("Login Error:", data);
+                }
+        }).catch(error => {
+            console.error(error);
+            alert("Try again.");
+        });
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+
+
 </body>
 </html>
