@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --light-bg: #f0f2f5;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            padding: 30px 0;
+            position: fixed;
+            width: 250px;
+            left: 0;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-header {
+            padding: 0 20px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .sidebar-header-icon {
+            font-size: 32px;
+        }
+
+        .sidebar-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-menu li {
+            margin: 0;
+        }
+
+        .sidebar-menu a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-left-color: white;
+            transform: translateX(5px);
+        }
+
+        .sidebar-menu-icon {
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            padding: 0 20px;
+        }
+
+        .logout-btn {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        .main-wrapper {
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        .top-navbar {
+            background: white;
+            padding: 20px 30px;
+            margin: -30px -30px 30px -30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .navbar-title h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .navbar-title p {
+            font-size: 13px;
+            color: #999;
+            margin: 0;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+            width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px 10px 35px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .notification-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .user-profile:hover {
+            background: #f5f5f5;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .user-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .user-info h4 {
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+
+        .user-info p {
+            font-size: 11px;
+            color: #999;
+            margin: 0;
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .stat-card.blue {
+            border-left-color: #667eea;
+        }
+
+        .stat-card.green {
+            border-left-color: #27ae60;
+        }
+
+        .stat-card.orange {
+            border-left-color: #f39c12;
+        }
+
+        .stat-card.red {
+            border-left-color: #e74c3c;
+        }
+
+        .stat-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-avatar-large {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .profile-card h2 {
+            font-size: 22px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .profile-specialty {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .info-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title-icon {
+            font-size: 22px;
+        }
+
+        /* Appointment Card */
+        .appointment-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .appointment-item {
+            display: flex;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .appointment-item:last-child {
+            border-bottom: none;
+        }
+
+        .appointment-item:hover {
+            background: #f9f9f9;
+        }
+
+        .appointment-time {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .appointment-time-hour {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .appointment-time-period {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .appointment-details {
+            flex: 1;
+        }
+
+        .appointment-patient {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .appointment-type {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+
+        .appointment-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-scheduled {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .status-completed {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-cancelled {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .appointment-action {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .appointment-action:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Time Slot */
+        .time-slot {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-color);
+            background: #f9f9f9;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .time-slot.full {
+            opacity: 0.5;
+            border-left-color: #999;
+        }
+
+        .time-slot.full::before {
+            content: "🔒 ";
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main-wrapper {
+                margin-left: 200px;
+                padding: 20px;
+            }
+
+            .top-navbar {
+                margin: -20px -20px 20px -20px;
+            }
+
+            .search-box {
+                width: 180px;
+            }
+
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
+
+            .main-wrapper {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .top-navbar {
+                margin: -20px -20px 20px -20px;
+            }
+
+            .navbar-right {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .sidebar-footer {
+                position: static;
+                padding: 20px 0 0 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                margin-top: 20px;
+            }
+
+            .sidebar-menu a {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+
+            .appointment-item {
+                flex-wrap: wrap;
+            }
+
+            .appointment-action {
+                width: 100%;
+            }
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        .visible-section {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-header-icon">🏥</div>
+                <h3>MediCare</h3>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="#" class="active" onclick="showSection('dashboard', event)">
+                        <span class="sidebar-menu-icon"><i class="bi bi-speedometer2"></i></span>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSection('appointments', event)">
+                        <span class="sidebar-menu-icon"><i class="bi bi-calendar-check"></i></span>
+                        Appointments
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSection('patients', event)">
+                        <span class="sidebar-menu-icon"><i class="bi bi-people"></i></span>
+                        Patients
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSection('schedule', event)">
+                        <span class="sidebar-menu-icon"><i class="bi bi-clock"></i></span>
+                        Schedule
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSection('reports', event)">
+                        <span class="sidebar-menu-icon"><i class="bi bi-bar-chart"></i></span>
+                        Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSection('settings', event)">
+                        <span class="sidebar-menu-icon"><i class="bi bi-gear"></i></span>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="bi bi-box-arrow-right"></i>
+                    Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-wrapper flex-grow-1">
+            <!-- Top Navbar -->
+            <div class="top-navbar mb-4">
+                <div class="row align-items-center w-100">
+                    <div class="col-md-6">
+                        <div class="navbar-title">
+                            <h1 id="sectionTitle">Dashboard</h1>
+                            <p id="sectionSubtitle">Welcome back to your professional workspace</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="navbar-right">
+                            <div class="search-box">
+                                <span class="search-icon"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Search patients, appointments...">
+                            </div>
+                            <div class="notification-icon">
+                                <i class="bi bi-bell"></i>
+                                <span class="notification-badge">3</span>
+                            </div>
+                            <a href="#" class="user-profile" onclick="toggleProfileMenu(event)">
+                                <div class="user-avatar">DS</div>
+                                <div class="user-info">
+                                    <h4 id="userName">Dr. Sarah Smith</h4>
+                                    <p>Cardiologist</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section">
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-lg-6 col-xxl-3">
+                        <div class="stat-card blue">
+                            <div class="stat-icon">👨⚕️</div>
+                            <div class="stat-value">2,847</div>
+                            <div class="stat-label">Total Consultations</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-3">
+                        <div class="stat-card green">
+                            <div class="stat-icon">📅</div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Today's Appointments</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-3">
+                        <div class="stat-card orange">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-value">345</div>
+                            <div class="stat-label">Active Patients</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-3">
+                        <div class="stat-card red">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-value">4.8</div>
+                            <div class="stat-label">Patient Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card -->
+                <div class="profile-card mb-4">
+                    <div class="profile-avatar-large">👩⚕️</div>
+                    <h2 id="doctorNameFull">Dr. Sarah Smith</h2>
+                    <div class="profile-specialty">Cardiologist</div>
+                    
+                    <div class="profile-info">
+                        <div class="info-item">
+                            <div class="info-label">License Number</div>
+                            <div class="info-value">MD-2458932</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Experience</div>
+                            <div class="info-value">12 Years</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Hospital</div>
+                            <div class="info-value">City Medical Center</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Contact</div>
+                            <div class="info-value">+1-555-0123</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Appointments -->
+                <div class="mb-4">
+                    <div class="section-title">
+                        <span class="section-title-icon">📅</span>
+                        Upcoming Appointments Today
+                    </div>
+                    <div class="appointment-card" id="appointmentsList">
+                        <!-- Appointments will be inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Schedule Section -->
+            <section id="schedule-section" class="hidden-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Morning Schedule</h5>
+                                <div class="time-slot">09:00 AM - 09:30 AM</div>
+                                <div class="time-slot">09:30 AM - 10:00 AM</div>
+                                <div class="time-slot full">10:00 AM - 10:30 AM</div>
+                                <div class="time-slot">10:30 AM - 11:00 AM</div>
+                                <div class="time-slot">11:00 AM - 11:30 AM</div>
+                                <div class="time-slot">11:30 AM - 12:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Afternoon Schedule</h5>
+                                <div class="time-slot">02:00 PM - 02:30 PM</div>
+                                <div class="time-slot full">02:30 PM - 03:00 PM</div>
+                                <div class="time-slot">03:00 PM - 03:30 PM</div>
+                                <div class="time-slot">03:30 PM - 04:00 PM</div>
+                                <div class="time-slot">04:00 PM - 04:30 PM</div>
+                                <div class="time-slot full">04:30 PM - 05:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patients Section -->
+            <section id="patients-section" class="hidden-section">
+                <div class="appointment-card" id="patientsList">
+                    <!-- Patients will be inserted here -->
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports-section" class="hidden-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Performance Reports</h5>
+                        <p class="text-muted mb-3">Monthly report for <strong>Dr. Sarah Smith</strong></p>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded">
+                                    <small class="text-muted d-block mb-2">Consultations This Month</small>
+                                    <h3 class="mb-0">156</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-light rounded">
+                                    <small class="text-muted d-block mb-2">Average Rating</small>
+                                    <h3 class="mb-0">4.8 ⭐</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                            <i class="bi bi-download"></i> Download Full Report
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="hidden-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Account Settings</h5>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-600">Email Address</label>
+                            <input type="email" class="form-control" value="dr.smith@hospital.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-600">Phone Number</label>
+                            <input type="tel" class="form-control" value="+1-555-0123">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-600 mb-3">Notification Preferences</label>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                                <label class="form-check-label" for="emailNotif">
+                                    Email notifications for new appointments
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="smsNotif" checked>
+                                <label class="form-check-label" for="smsNotif">
+                                    SMS reminders for appointments
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                            <i class="bi bi-check-circle"></i> Save Changes
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Mock appointments data
+        const appointmentsData = [
+            { time: '09', ampm: 'AM', patient: 'John Anderson', type: 'Follow-up: Heart Condition', status: 'scheduled' },
+            { time: '10', ampm: 'AM', patient: 'Emily Davis', type: 'New Patient: Checkup', status: 'scheduled' },
+            { time: '11', ampm: 'AM', patient: 'Michael Wilson', type: 'Follow-up: Blood Pressure Check', status: 'scheduled' },
+            { time: '02', ampm: 'PM', patient: 'Sarah Thompson', type: 'ECG Test', status: 'scheduled' },
+            { time: '03', ampm: 'PM', patient: 'James Brown', type: 'Consultation', status: 'scheduled' }
+        ];
+
+        // Mock doctor data
+        const doctorData = {
+            name: 'Dr. Sarah Smith',
+            specialty: 'Cardiologist',
+            initials: 'DS',
+            avatar: '👩⚕️'
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAppointments();
+            loadDoctorInfo();
+        });
+
+        function loadDoctorInfo() {
+            document.getElementById('userName').textContent = doctorData.name;
+            document.getElementById('doctorNameFull').textContent = doctorData.name;
+            document.querySelector('.user-avatar').textContent = doctorData.initials;
+            document.querySelector('.profile-avatar-large').textContent = doctorData.avatar;
+        }
+
+        function loadAppointments() {
+            const appointmentsList = document.getElementById('appointmentsList');
+            appointmentsList.innerHTML = '';
+
+            appointmentsData.forEach(apt => {
+                const appointmentDiv = document.createElement('div');
+                appointmentDiv.className = 'appointment-item';
+                appointmentDiv.innerHTML = `
+                    <div class="appointment-time">
+                        <div class="appointment-time-hour">${apt.time}</div>
+                        <div class="appointment-time-period">${apt.ampm}</div>
+                    </div>
+                    <div class="appointment-details">
+                        <div class="appointment-patient">${apt.patient}</div>
+                        <div class="appointment-type">${apt.type}</div>
+                    </div>
+                    <div class="appointment-status status-${apt.status}">${apt.status.charAt(0).toUpperCase() + apt.status.slice(1)}</div>
+                    <button class="appointment-action" onclick="viewAppointment('${apt.patient}')">View</button>
+                `;
+                appointmentsList.appendChild(appointmentDiv);
+            });
+
+            // Load patients data
+            loadPatients();
+        }
+
+        function loadPatients() {
+            const patientsList = document.getElementById('patientsList');
+            patientsList.innerHTML = '';
+
+            appointmentsData.forEach(apt => {
+                const appointmentDiv = document.createElement('div');
+                appointmentDiv.className = 'appointment-item';
+                appointmentDiv.innerHTML = `
+                    <div class="appointment-time">
+                        <div class="appointment-time-hour">${apt.time}</div>
+                        <div class="appointment-time-period">${apt.ampm}</div>
+                    </div>
+                    <div class="appointment-details">
+                        <div class="appointment-patient">${apt.patient}</div>
+                        <div class="appointment-type">${apt.type}</div>
+                    </div>
+                    <div class="appointment-status status-completed">Active</div>
+                    <button class="appointment-action" onclick="viewAppointment('${apt.patient}')">View Details</button>
+                `;
+                patientsList.appendChild(appointmentDiv);
+            });
+        }
+
+        function showSection(sectionName, event) {
+            event.preventDefault();
+
+            // Hide all sections
+            document.getElementById('dashboard-section').classList.remove('visible-section');
+            document.getElementById('schedule-section').classList.remove('visible-section');
+            document.getElementById('patients-section').classList.remove('visible-section');
+            document.getElementById('reports-section').classList.remove('visible-section');
+            document.getElementById('settings-section').classList.remove('visible-section');
+
+            // Add hidden class
+            document.getElementById('dashboard-section').classList.add('hidden-section');
+            document.getElementById('schedule-section').classList.add('hidden-section');
+            document.getElementById('patients-section').classList.add('hidden-section');
+            document.getElementById('reports-section').classList.add('hidden-section');
+            document.getElementById('settings-section').classList.add('hidden-section');
+
+            // Update sidebar active state
+            document.querySelectorAll('.sidebar-menu a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.closest('a').classList.add('active');
+
+            // Show selected section
+            switch(sectionName) {
+                case 'dashboard':
+                    document.getElementById('dashboard-section').classList.remove('hidden-section');
+                    document.getElementById('dashboard-section').classList.add('visible-section');
+                    updateSectionTitle('Dashboard', 'Welcome back to your professional workspace');
+                    break;
+                case 'appointments':
+                    document.getElementById('dashboard-section').classList.remove('hidden-section');
+                    document.getElementById('dashboard-section').classList.add('visible-section');
+                    updateSectionTitle('Appointments', 'Manage all your scheduled appointments');
+                    break;
+                case 'patients':
+                    document.getElementById('patients-section').classList.remove('hidden-section');
+                    document.getElementById('patients-section').classList.add('visible-section');
+                    updateSectionTitle('Patients', 'View and manage your patients');
+                    break;
+                case 'schedule':
+                    document.getElementById('schedule-section').classList.remove('hidden-section');
+                    document.getElementById('schedule-section').classList.add('visible-section');
+                    updateSectionTitle('Schedule', 'Your daily schedule and availability');
+                    break;
+                case 'reports':
+                    document.getElementById('reports-section').classList.remove('hidden-section');
+                    document.getElementById('reports-section').classList.add('visible-section');
+                    updateSectionTitle('Reports', 'View your performance and statistics');
+                    break;
+                case 'settings':
+                    document.getElementById('settings-section').classList.remove('hidden-section');
+                    document.getElementById('settings-section').classList.add('visible-section');
+                    updateSectionTitle('Settings', 'Manage your account preferences');
+                    break;
+            }
+        }
+
+        function updateSectionTitle(title, subtitle) {
+            document.getElementById('sectionTitle').textContent = title;
+            document.getElementById('sectionSubtitle').textContent = subtitle;
+        }
+
+        function viewAppointment(patientName) {
+            alert(`Viewing appointment for ${patientName}`);
+        }
+
+        function toggleProfileMenu(event) {
+            event.preventDefault();
+            alert(`Profile menu for ${doctorData.name}`);
+        }
+
+        function logout() {
+            if(confirm('Are you sure you want to logout?')) {
+                // You can change this to your actual login page URL
+                window.location.href = '/login/';
+                // Or use: sessionStorage.clear(); window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
