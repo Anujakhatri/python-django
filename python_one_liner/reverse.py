@@ -1,1 +1,3 @@
-print("python"[::-1])
+# reverse a string
+text="python"
+print(text[::-1])

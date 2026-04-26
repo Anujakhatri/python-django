@@ -1,0 +1,1676 @@
+{
+  "nodes": [
+    {
+      "id": "manage_py",
+      "label": "manage.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/manage.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "manage_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/manage.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "manage_rationale_8",
+      "label": "Run administrative tasks.",
+      "file_type": "rationale",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/manage.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "frontend_models_py",
+      "label": "models.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/models.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_init_py",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_apps_py",
+      "label": "apps.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/apps.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_frontendconfig",
+      "label": "FrontendConfig",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/apps.py",
+      "source_location": "L4"
+    },
+    {
+      "id": "appconfig",
+      "label": "AppConfig",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "frontend_admin_py",
+      "label": "admin.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/admin.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_tests_py",
+      "label": "tests.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/tests.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_urls_py",
+      "label": "urls.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/urls.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_views_py",
+      "label": "views.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "views_home",
+      "label": "home()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L4"
+    },
+    {
+      "id": "views_login_page",
+      "label": "login_page()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "views_register_page",
+      "label": "register_page()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L10"
+    },
+    {
+      "id": "views_doctor_home",
+      "label": "doctor_home()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L13"
+    },
+    {
+      "id": "views_patient_home",
+      "label": "patient_home()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L16"
+    },
+    {
+      "id": "frontend_migrations_init_py",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/migrations/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_static_index_js",
+      "label": "index.js",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/static/index.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "accounts_models_py",
+      "label": "models.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/models.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "models_user",
+      "label": "User",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/models.py",
+      "source_location": "L5"
+    },
+    {
+      "id": "abstractuser",
+      "label": "AbstractUser",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "accounts_serializers_py",
+      "label": "serializers.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "serializers_registrationserializer",
+      "label": "RegistrationSerializer",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L4"
+    },
+    {
+      "id": "serializers_meta",
+      "label": "Meta",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L5"
+    },
+    {
+      "id": "serializers_registrationserializer_create",
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L9"
+    },
+    {
+      "id": "accounts_init_py",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "accounts_apps_py",
+      "label": "apps.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/apps.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_accountsconfig",
+      "label": "AccountsConfig",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/apps.py",
+      "source_location": "L4"
+    },
+    {
+      "id": "appconfig",
+      "label": "AppConfig",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "accounts_admin_py",
+      "label": "admin.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/admin.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "accounts_tests_py",
+      "label": "tests.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/tests.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "accounts_urls_py",
+      "label": "urls.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/urls.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "accounts_views_py",
+      "label": "views.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "views_register",
+      "label": "register()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L12"
+    },
+    {
+      "id": "views_profile",
+      "label": "profile()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L45"
+    },
+    {
+      "id": "views_users_list",
+      "label": "users_list()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L53"
+    },
+    {
+      "id": "accounts_migrations_init_py",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/migrations/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "accounts_migrations_0001_initial_py",
+      "label": "0001_initial.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/migrations/0001_initial.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "0001_initial_migration",
+      "label": "Migration",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/migrations/0001_initial.py",
+      "source_location": "L9"
+    },
+    {
+      "id": "clinic_db_py",
+      "label": "db.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/db.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "clinic_models_py",
+      "label": "models.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "models_doctor",
+      "label": "Doctor",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "models_doctor_str",
+      "label": ".__str__()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L12"
+    },
+    {
+      "id": "models_patient",
+      "label": "Patient",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L15"
+    },
+    {
+      "id": "models_patient_str",
+      "label": ".__str__()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L19"
+    },
+    {
+      "id": "models_appointment",
+      "label": "Appointment",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L22"
+    },
+    {
+      "id": "clinic_serializers_py",
+      "label": "serializers.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "serializers_doctorserializer",
+      "label": "DoctorSerializer",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "serializers_meta",
+      "label": "Meta",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L9"
+    },
+    {
+      "id": "serializers_patientserializer",
+      "label": "PatientSerializer",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L13"
+    },
+    {
+      "id": "serializers_appointmentserializer",
+      "label": "AppointmentSerializer",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L18"
+    },
+    {
+      "id": "clinic_init_py",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "clinic_apps_py",
+      "label": "apps.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/apps.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "apps_clinicconfig",
+      "label": "ClinicConfig",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/apps.py",
+      "source_location": "L4"
+    },
+    {
+      "id": "appconfig",
+      "label": "AppConfig",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "clinic_admin_py",
+      "label": "admin.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/admin.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "clinic_tests_py",
+      "label": "tests.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/tests.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "clinic_urls_py",
+      "label": "urls.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/urls.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "clinic_views_py",
+      "label": "views.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "views_doctor_list",
+      "label": "doctor_list()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L17"
+    },
+    {
+      "id": "views_doctor_detail",
+      "label": "doctor_detail()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "views_patient_list",
+      "label": "patient_list()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L56"
+    },
+    {
+      "id": "views_patient_detail",
+      "label": "patient_detail()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L72"
+    },
+    {
+      "id": "views_appointment_list",
+      "label": "appointment_list()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L94"
+    },
+    {
+      "id": "views_appointment_detail",
+      "label": "appointment_detail()",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L131"
+    },
+    {
+      "id": "clinic_migrations_init_py",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/migrations/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "clinic_migrations_0001_initial_py",
+      "label": "0001_initial.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/migrations/0001_initial.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "0001_initial_migration",
+      "label": "Migration",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/migrations/0001_initial.py",
+      "source_location": "L7"
+    },
+    {
+      "id": "smart_clinic_asgi_py",
+      "label": "asgi.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/asgi.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "asgi_rationale_1",
+      "label": "ASGI config for smart_clinic project.  It exposes the ASGI callable as a module-",
+      "file_type": "rationale",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/asgi.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "smart_clinic_init_py",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/__init__.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "smart_clinic_settings_py",
+      "label": "settings.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/settings.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "settings_rationale_1",
+      "label": "Django settings for smart_clinic project.  Generated by 'django-admin startproje",
+      "file_type": "rationale",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/settings.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "smart_clinic_urls_py",
+      "label": "urls.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/urls.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "urls_rationale_1",
+      "label": "URL configuration for smart_clinic project.  The `urlpatterns` list routes URLs",
+      "file_type": "rationale",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/urls.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "smart_clinic_wsgi_py",
+      "label": "wsgi.py",
+      "file_type": "code",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/wsgi.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "wsgi_rationale_1",
+      "label": "WSGI config for smart_clinic project.  It exposes the WSGI callable as a module-",
+      "file_type": "rationale",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/wsgi.py",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "manage_py",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/manage.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "manage_py",
+      "target": "sys",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/manage.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "manage_py",
+      "target": "manage_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/manage.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "manage_rationale_8",
+      "target": "manage_main",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/manage.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_models_py",
+      "target": "django_db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/models.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_apps_py",
+      "target": "django_apps",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/apps.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_apps_py",
+      "target": "apps_frontendconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/apps.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_frontendconfig",
+      "target": "appconfig",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/apps.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_admin_py",
+      "target": "django_contrib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/admin.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_tests_py",
+      "target": "django_test",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/tests.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_urls_py",
+      "target": "django_contrib_auth",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/urls.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_urls_py",
+      "target": "django_urls",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/urls.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_urls_py",
+      "target": "frontend_views_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/urls.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_views_py",
+      "target": "django_shortcuts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_views_py",
+      "target": "views_home",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_views_py",
+      "target": "views_login_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_views_py",
+      "target": "views_register_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_views_py",
+      "target": "views_doctor_home",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_views_py",
+      "target": "views_patient_home",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/frontend/views.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_models_py",
+      "target": "django_contrib_auth_models",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/models.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_models_py",
+      "target": "django_db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/models.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_models_py",
+      "target": "models_user",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/models.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "models_user",
+      "target": "abstractuser",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/models.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_serializers_py",
+      "target": "rest_framework",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_serializers_py",
+      "target": "accounts_models_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_serializers_py",
+      "target": "serializers_registrationserializer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_serializers_py",
+      "target": "serializers_meta",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "serializers_registrationserializer",
+      "target": "serializers_registrationserializer_create",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_apps_py",
+      "target": "django_apps",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/apps.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_apps_py",
+      "target": "apps_accountsconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/apps.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_accountsconfig",
+      "target": "appconfig",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/apps.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_admin_py",
+      "target": "django_contrib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/admin.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_tests_py",
+      "target": "django_test",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/tests.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_urls_py",
+      "target": "django_urls",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/urls.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_urls_py",
+      "target": "accounts_views_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/urls.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "rest_framework_decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "rest_framework_permissions",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "rest_framework_response",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "accounts_serializers_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "clinic_models",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "accounts_models_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "django_views_decorators_csrf",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "views_register",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "views_profile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_views_py",
+      "target": "views_users_list",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_migrations_0001_initial_py",
+      "target": "django_contrib_auth_models",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/migrations/0001_initial.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_migrations_0001_initial_py",
+      "target": "django_contrib_auth_validators",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/migrations/0001_initial.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_migrations_0001_initial_py",
+      "target": "django_utils_timezone",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/migrations/0001_initial.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_migrations_0001_initial_py",
+      "target": "django_db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/migrations/0001_initial.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "accounts_migrations_0001_initial_py",
+      "target": "0001_initial_migration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/migrations/0001_initial.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_models_py",
+      "target": "django_db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_models_py",
+      "target": "django_conf",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_models_py",
+      "target": "models_doctor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "models_doctor",
+      "target": "models_doctor_str",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_models_py",
+      "target": "models_patient",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "models_patient",
+      "target": "models_patient_str",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_models_py",
+      "target": "models_appointment",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/models.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_serializers_py",
+      "target": "rest_framework",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_serializers_py",
+      "target": "clinic_models_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_serializers_py",
+      "target": "serializers_doctorserializer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_serializers_py",
+      "target": "serializers_meta",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_serializers_py",
+      "target": "serializers_patientserializer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_serializers_py",
+      "target": "serializers_meta",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_serializers_py",
+      "target": "serializers_appointmentserializer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_serializers_py",
+      "target": "serializers_meta",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_apps_py",
+      "target": "django_apps",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/apps.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_apps_py",
+      "target": "apps_clinicconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/apps.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "apps_clinicconfig",
+      "target": "appconfig",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/apps.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_admin_py",
+      "target": "django_contrib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/admin.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_admin_py",
+      "target": "clinic_models_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/admin.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_tests_py",
+      "target": "django_test",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/tests.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_urls_py",
+      "target": "django_urls",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/urls.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_urls_py",
+      "target": "clinic_views_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/urls.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_urls_py",
+      "target": "clinic_views_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/urls.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_urls_py",
+      "target": "clinic_views_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/urls.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "django_shortcuts",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "django_views_decorators_csrf",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "rest_framework",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "rest_framework_decorators",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "rest_framework_permissions",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "rest_framework_response",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "clinic_models_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "clinic_serializers_py",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "views_doctor_list",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "views_doctor_detail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "views_patient_list",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "views_patient_detail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "views_appointment_list",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_views_py",
+      "target": "views_appointment_detail",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L131",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_migrations_0001_initial_py",
+      "target": "django_db_models_deletion",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/migrations/0001_initial.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_migrations_0001_initial_py",
+      "target": "django_db",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/migrations/0001_initial.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "clinic_migrations_0001_initial_py",
+      "target": "0001_initial_migration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/migrations/0001_initial.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "smart_clinic_asgi_py",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/asgi.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "smart_clinic_asgi_py",
+      "target": "django_core_asgi",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/asgi.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "asgi_rationale_1",
+      "target": "smart_clinic_asgi_py",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/asgi.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "smart_clinic_settings_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/settings.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "settings_rationale_1",
+      "target": "smart_clinic_settings_py",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/settings.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "smart_clinic_urls_py",
+      "target": "django_contrib",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/urls.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "smart_clinic_urls_py",
+      "target": "django_urls",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/urls.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "smart_clinic_urls_py",
+      "target": "rest_framework_simplejwt_views",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/urls.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "urls_rationale_1",
+      "target": "smart_clinic_urls_py",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/urls.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "smart_clinic_wsgi_py",
+      "target": "os",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/wsgi.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "smart_clinic_wsgi_py",
+      "target": "django_core_wsgi",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/wsgi.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "wsgi_rationale_1",
+      "target": "smart_clinic_wsgi_py",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/smart_clinic/wsgi.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "serializers_registrationserializer",
+      "target": "models_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_meta",
+      "target": "models_user",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_doctorserializer",
+      "target": "models_doctor",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_meta",
+      "target": "models_doctor",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_patientserializer",
+      "target": "models_doctor",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_appointmentserializer",
+      "target": "models_doctor",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_doctorserializer",
+      "target": "models_patient",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_meta",
+      "target": "models_patient",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_patientserializer",
+      "target": "models_patient",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_appointmentserializer",
+      "target": "models_patient",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_doctorserializer",
+      "target": "models_appointment",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_meta",
+      "target": "models_appointment",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_patientserializer",
+      "target": "models_appointment",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "serializers_appointmentserializer",
+      "target": "models_appointment",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/serializers.py",
+      "source_location": "L2",
+      "weight": 0.8
+    },
+    {
+      "source": "views_register",
+      "target": "serializers_registrationserializer",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "views_register",
+      "target": "serializers_registrationserializer_create",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/accounts/views.py",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "views_doctor_detail",
+      "target": "serializers_doctorserializer",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "views_patient_detail",
+      "target": "serializers_patientserializer",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "views_appointment_list",
+      "target": "serializers_appointmentserializer",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L113",
+      "weight": 1.0
+    },
+    {
+      "source": "views_appointment_detail",
+      "target": "serializers_appointmentserializer",
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/Users/anujakhatri/Desktop/CodeRush/python-django/smart_clinic/clinic/views.py",
+      "source_location": "L137",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

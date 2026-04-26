@@ -28,5 +28,7 @@ l1, l2 = [True, True, True], [True, True, False]
 print("All True") if all(l1) else print("Not all True")
 print("All True") if all(l2) else print("Not all True")
 
-
-
+# Check if any element is true
+l3, l4 = [True, False, False], [False, False, False]
+print("Any True") if any(l3) else print("Not any True")
+print("Any True") if any(l4) else print("Not any True")

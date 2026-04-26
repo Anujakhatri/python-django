@@ -1,1 +1,8 @@
-a, b = 5, 10; a, b = b, a; print(f"a: {a}, b: {b}")
+# swap two variables
+temp = a
+a = b
+b = temp
+
+print("After swapping:")
+print("a =", a)
+print("b =", b)

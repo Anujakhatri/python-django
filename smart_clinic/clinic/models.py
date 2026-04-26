@@ -1,38 +1,26 @@
 from django.db import models
 
+from django.conf import settings
+
 
 # Create your models here.
 class Doctor(models.Model):
-    name = models.CharField(max_length=40)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     specialization = models.CharField(max_length=100)
-    experience = models.CharField(max_length=50)
+    experience = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return self.user.username
 
 class Patient(models.Model):
-    name = models.CharField(max_length=50)
-    age = models.IntegerField()
-    contact = models.CharField(max_length=15)
-    reason = models.CharField(max_length=100)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    age = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.user.username
 
-class Appointment(models.Model) :
-    APPOINTMENT_OPTIONS = [
-        ('pending', 'Pending'), #(Raw database, Human Readable)
-        ('confirmed', 'Confirmed'),
-        ('cancelled', 'Cancelled'),
-        ('completed', 'Completed'),
-    ]
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='appointments')
-    patient = models.ForeignKey(Patient, on_delete =models.CASCADE, related_name='appointments')
-    date = models.DateTimeField()
-    status = models.CharField(max_length=20, choices = APPOINTMENT_OPTIONS, default='pending')
-    notes = models.TextField(blank=True)
-
-    def __str__(self):
-        return f"{self.patient} → {self.doctor} on {self.date} "
-
-
+class Appointment(models.Model):
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date = models.DateField()
+    time = models.TimeField()
