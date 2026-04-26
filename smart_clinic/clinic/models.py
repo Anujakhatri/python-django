@@ -1,26 +1,31 @@
 from django.db import models
 
-from django.conf import settings
-
-
-# Create your models here.
 class Doctor(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    name = models.CharField(max_length=40)
     specialization = models.CharField(max_length=100)
-    experience = models.CharField(max_length=100)
+    experience = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.user.username
+        return self.name
 
 class Patient(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    age = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=50)
+    age = models.IntegerField()
+    contact = models.CharField(max_length=15)
+    reason = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.user.username
+        return self.name
 
 class Appointment(models.Model):
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    date = models.DateField()
-    time = models.TimeField()
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('confirmed', 'Confirmed'),
+        ('cancelled', 'Cancelled'),
+        ('completed', 'Completed')
+    ]
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='appointments')
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='appointments')
+    date = models.DateTimeField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    notes = models.TextField(blank=True)

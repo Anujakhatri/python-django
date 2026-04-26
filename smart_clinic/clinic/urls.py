@@ -8,7 +8,7 @@ from .views import appointment_list, appointment_detail
 urlpatterns=[
     path('doctors/', doctor_list),
     path('doctors/<int:pk>/', doctor_detail),
-    path('patients/', patient_list),
+    path('patients/', patient_list, name='patient-list'),
     path('patients/<int:pk>/', patient_detail),
     path('appointments/', appointment_list),
     path('appointments/<int:pk>/', appointment_detail)

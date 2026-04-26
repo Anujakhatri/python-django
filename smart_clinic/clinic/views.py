@@ -10,17 +10,17 @@ from .serializers import DoctorSerializer, PatientSerializer, AppointmentSeriali
 
 
 # Create your views here.
-#annotation
+# annotation
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def doctor_list(request):
-    doctors = Doctor.objects.select_related('user').all()
+    doctors = Doctor.objects.all()
 
     data = [
         {
             "id": d.id,
-            "username": d.user.username,
+            "name": d.name,
             "specialization": d.specialization,
             "experience": d.experience
         }
@@ -29,13 +29,14 @@ def doctor_list(request):
 
     return Response(data)
 
-@api_view(['GET','PUT','DELETE'])
+
+@api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def doctor_detail(request, pk):
     try:
         doctor = Doctor.objects.get(pk=pk)
     except Doctor.DoesNotExist:
-        return Response({"error : Not Found"},status=404)
+        return Response({"error : Not Found"}, status=404)
     if request.method == 'GET':
         serializer = DoctorSerializer(doctor)
         return Response(serializer.data)
@@ -47,33 +48,43 @@ def doctor_detail(request, pk):
         return Response(serializer.errors)
     if request.method == 'DELETE':
         doctor.delete()
-        return Response({"message" : "deleted"})
+        return Response({"message": "deleted"})
+
 
 ####################   patient         ###########
 
-@api_view(['GET','POST'])
+@api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def patient_list(request):
-    patients = Patient.objects.select_related('user').all()
+    if request.method == 'GET':
+        patients = Patient.objects.all()
+        data = [
+            {
+                "id": p.id,
+                "name": p.name,
+                "age": p.age,
+                "contact": p.contact,
+                "reason": p.reason
+            }
+            for p in patients
+        ]
+        return Response(data)
 
-    data = [
-        {
-            "id": p.id,
-            "username": p.user.username,
-            "age": p.age
-        }
-        for p in patients
-    ]
+    if request.method == 'POST':
+        serializer = PatientSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
 
-    return Response(data)
 
-@api_view(['GET','PUT','DELETE'])
+@api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def patient_detail(request, pk):
     try:
         patient = Patient.objects.get(pk=pk)
     except Patient.DoesNotExist:
-        return Response({"error : Not Found"},status=404)
+        return Response({"error : Not Found"}, status=404)
     if request.method == 'GET':
         serializer = PatientSerializer(patient)
         return Response(serializer.data)
@@ -85,46 +96,47 @@ def patient_detail(request, pk):
         return Response(serializer.errors)
     if request.method == 'DELETE':
         patient.delete()
-        return Response({"message" : "deleted"})
+        return Response({"message": "deleted"})
+
 
 ##################### Appointment ##########################################
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def appointment_list(request):
-
     if request.method == 'GET':
-        appointments = Appointment.objects.select_related('doctor__user', 'patient__user').all()
+        appointments = Appointment.objects.select_related('doctor', 'patient').all()
 
         data = [
             {
                 "id": a.id,
-                "doctor": a.doctor.user.username,
-                "patient": a.patient.user.username,
+                "doctor": a.doctor.name,
+                "patient": a.patient.name,
                 "date": a.date,
-                "time": a.time
+                "status": a.status,
+                "notes": a.notes
             }
             for a in appointments
         ]
 
         return Response(data)
 
-    elif request.method == 'POST':
+    if request.method == 'POST':
         serializer = AppointmentSerializer(data=request.data)
 
         if serializer.is_valid():
             doctor = serializer.validated_data['doctor']
             date = serializer.validated_data['date']
-            time = serializer.validated_data['time']
 
             # to prevent double booking
-            if Appointment.objects.filter(doctor=doctor, date=date, time=time).exists():
+            if Appointment.objects.filter(doctor=doctor, date=date).exists():
                 return Response({"error": "Doctor already booked"}, status=400)
 
             serializer.save()
             return Response(serializer.data)
 
         return Response(serializer.errors)
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
@@ -145,4 +157,3 @@ def appointment_detail(request, pk):
     if request.method == 'DELETE':
         appointment.delete()
         return Response({"message": "deleted"})
-
