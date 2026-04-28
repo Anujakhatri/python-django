@@ -9,7 +9,7 @@ User = get_user_model()  # returns accounts.User, not auth.User
 @pytest.mark.django_db
 def test_create_patient():
     # Create a test user and authenticate the client
-    user = User.objects.create_user(username='testuser', password='testpass')
+    user = User.objects.create_user(username='anuja', password='3456')
     client = APIClient()
     client.force_authenticate(user=user)
 
