@@ -1,5 +1,5 @@
 """
-URL configuration for smart_clinic project.
+URL configuration for clinic_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -20,8 +20,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('clinic.urls') ),
-    path('', include('frontend.urls')),
+    path('api/', include('clinic.urls') ),
+    # path('', include('frontend.urls')),
     path('api/', include('accounts.urls')),
     #tokenization
    path('api/token/', TokenObtainPairView.as_view()),
