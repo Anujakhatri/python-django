@@ -1,5 +1,5 @@
 """
-ASGI config for smart_clinic project.
+ASGI config for clinic_project project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_clinic.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'clinic_project.settings')
 
 application = get_asgi_application()

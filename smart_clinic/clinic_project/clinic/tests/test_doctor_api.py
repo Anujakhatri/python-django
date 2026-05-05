@@ -1,7 +1,7 @@
 import pytest
 from rest_framework.test import APIClient
 from django.urls import reverse
-from clinic.models import Doctor
+from clinic_project.clinic.models import Doctor
 
 @pytest.mark.django_db
 def test_get_doctor_list():
