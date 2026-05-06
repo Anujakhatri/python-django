@@ -7,12 +7,14 @@ function RegisterPatient() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [age, setAge] = useState("");
+    const [error, setError] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError("");
         //registration of patient
-        axios.post("/api/register/", { username, password, role: "patient", age, })
+        axios.post("/api/register/", { username, password, role: "patient", age: age || null })
             //auto login
             .then(() => {
                 return axios.post("/api/token/", { username, password });
@@ -23,6 +25,13 @@ function RegisterPatient() {
             })
             .catch((err) => {
                 console.log(err.response?.data);
+                if (err.response?.data?.username) {
+                    setError(err.response.data.username[0]);
+                } else if (err.response?.data?.password) {
+                    setError(err.response.data.password[0]);
+                } else {
+                    setError("An error occurred during registration.");
+                }
             });
 
 
@@ -31,6 +40,7 @@ function RegisterPatient() {
     return (
         <form onSubmit={handleSubmit}>
             <h2>Register Patient</h2>
+            {error && <p style={{ color: "red" }}>{error}</p>}
 
             <input
                 placeholder="Username"
