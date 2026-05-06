@@ -53,14 +53,14 @@ REST_FRAMEWORK = {
     ),
 }
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.blog.CorsMiddleware',
+    'django.blog.security.SecurityMiddleware',
+    'django.contrib.sessions.blog.SessionMiddleware',
+    'django.blog.common.CommonMiddleware',
+    'django.blog.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.blog.AuthenticationMiddleware',
+    'django.contrib.messages.blog.MessageMiddleware',
+    'django.blog.clickjacking.XFrameOptionsMiddleware',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

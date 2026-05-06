@@ -41,13 +41,13 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.blog.security.SecurityMiddleware',
+    'django.contrib.sessions.blog.SessionMiddleware',
+    'django.blog.common.CommonMiddleware',
+    'django.blog.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.blog.AuthenticationMiddleware',
+    'django.contrib.messages.blog.MessageMiddleware',
+    'django.blog.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'temp_converter_project.urls'
