@@ -1,6 +1,6 @@
-import {useState} from "react";
-import {registerPatient} from "../services/api";
-import {useNavigate} from 'react-router-dom';
+import { useState } from "react";
+import { registerPatient } from "../Services/api";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 function RegisterPatient() {
@@ -12,10 +12,10 @@ function RegisterPatient() {
     const handleSubmit = (e) => {
         e.preventDefault();
         //registration of patient
-        axios.post("/api/register/", {username, password, role: "patient", age,})
+        axios.post("/api/register/", { username, password, role: "patient", age, })
             //auto login
             .then(() => {
-                return axios.post("/api/token/", {username, password});
+                return axios.post("/api/token/", { username, password });
             })
             .then((res) => {
                 localStorage.setItem("token", res.data.access);

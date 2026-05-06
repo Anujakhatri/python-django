@@ -19,11 +19,18 @@ function Login() {
       //  store token
       localStorage.setItem("token", res.data.access);
 
-     if (role === "doctor") {
+      if (role === "doctor") {
         navigate("/doctor-list");
-      } else {
+
+      }
+      if (role === "patient") {
         navigate("/patient-list");
       }
+
+      if (role === "admin") {
+        navigate("/admin-list");
+      }
+
     } catch (err) {
       alert("Invalid credentials");
     }

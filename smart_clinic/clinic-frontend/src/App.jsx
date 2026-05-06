@@ -6,9 +6,12 @@ import RegisterPatient from "./pages/RegisterPatient";
 import RegisterDoctor from "./pages/RegisterDoctor";
 import HomePage from "./pages/HomePage";
 
-function App() {
+function ProtectedRoute({ children }) {
     const isAuthenticated = localStorage.getItem("token");
+    return isAuthenticated ? children : <Navigate to="/login" />;
+}
 
+function App() {
     return (
         <BrowserRouter>
             <div style={{textAlign: "center"}}>
@@ -19,39 +22,27 @@ function App() {
                     <Route path="/register" element={<RegisterPatient/>}/>
                     <Route path="/register_doctor" element={<RegisterDoctor/>}/>
                     <Route path="/login" element={<Login/>}/>
-                    <Route path="/patient-list" element={<PatientList/>}/>
-                    <Route path="/doctor-list" element={<DoctorList/>}/>
                     <Route path="/home-page" element={<HomePage/>}/>
-                    {/* Protected Route */}
+                    
+                    {/* Protected Routes */}
                     <Route
                         path="/patient-list"
                         element={
-                            isAuthenticated ? <PatientList/> : <Navigate to="/login"/>
+                            <ProtectedRoute><PatientList/></ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/doctor-list"
+                        element={
+                            <ProtectedRoute><DoctorList/></ProtectedRoute>
                         }
                     />
 
-                    <Route
-                        path="/login"
-                        element={
-                            <Navigate to="/login"/>
-                        }
-                    />
+                    {/* Default Route */}
                     <Route
                         path="/"
                         element={
                             <Navigate to="/home-page"/>
-                        }
-                    />
-                    <Route
-                        path="register_doctor"
-                        element={
-                            <Navigate to="/register_doctor"/>
-                        }
-                    />
-                    <Route
-                        path="doctor-list"
-                        element={
-                            <Navigate to="/doctor-list"/>
                         }
                     />
                 </Routes>

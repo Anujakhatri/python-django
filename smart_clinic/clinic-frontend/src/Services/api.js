@@ -4,6 +4,7 @@ const API = axios.create({
   baseURL: "/api/",
 });
 
+
 // Attach JWT token
 API.interceptors.request.use((req) => {
   const token = localStorage.getItem("token");
@@ -14,15 +15,16 @@ API.interceptors.request.use((req) => {
 
   return req; // VERY IMPORTANT
 });
+
 //refresh the token
 API.interceptors.response.use(
-(response)=> response, async(error)=>{
-    if(error.response?.data?.code === "token_not_valid"){
-        localStorage.removeItem("token");
-        window.location.href = "/login";
+  (response) => response, async (error) => {
+    if (error.response?.data?.code === "token_not_valid") {
+      localStorage.removeItem("token");
+      window.location.href = "/login";
     }
     return Promise.reject(error);
-}
+  }
 );
 
 export default API;

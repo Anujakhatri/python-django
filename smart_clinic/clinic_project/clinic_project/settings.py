@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xklffn$8ocr%cvr!7wmc6#tc)ya&kl$-w+0uj^m3m(mp5fgvv9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
     'clinic',
@@ -51,16 +52,20 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+
 }
 MIDDLEWARE = [
-    'corsheaders.blog.CorsMiddleware',
-    'django.blog.security.SecurityMiddleware',
-    'django.contrib.sessions.blog.SessionMiddleware',
-    'django.blog.common.CommonMiddleware',
-    'django.blog.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.blog.AuthenticationMiddleware',
-    'django.contrib.messages.blog.MessageMiddleware',
-    'django.blog.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -85,7 +90,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'clinic_project.wsgi.application'
 
-
+CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000"]
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
@@ -135,3 +140,5 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'frontend' / 'static',
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

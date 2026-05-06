@@ -1,6 +1,6 @@
-import {useEffect, useState} from "react";
-import {getDoctors} from "../services/api";
-import {useNavigate} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getDoctors } from "../Services/api";
+import { useNavigate } from "react-router-dom";
 
 function DoctorList() {
     const [Doctors, setDoctors] = useState([]);
@@ -19,7 +19,7 @@ function DoctorList() {
     useEffect(() => {
         loadDoctors();
     }, []);
-//logout button
+    //logout button
     const handleLogout = () => {
         localStorage.removeItem("token");
         navigate("/login");

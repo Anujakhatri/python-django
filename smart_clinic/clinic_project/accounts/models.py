@@ -4,8 +4,9 @@ from django.db import models
 # Create your models here.
 class User(AbstractUser):
    ROLE_CHOICES = (
-   ('doctor', 'Doctor'),
-   ('patient', 'Patient'),
+      ('admin', 'admin'),
+      ('doctor', 'Doctor'),
+      ('patient', 'Patient'),
    )
    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='patient')
    
