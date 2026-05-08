@@ -4,6 +4,7 @@ import PatientList from "./pages/PatientList";
 import DoctorList from "./pages/DoctorList";
 import RegisterPatient from "./pages/RegisterPatient";
 import RegisterDoctor from "./pages/RegisterDoctor";
+import AdminDashboard from "./pages/AdminDashboard";
 import HomePage from "./pages/HomePage";
 
 function ProtectedRoute({ children }) {
@@ -25,6 +26,12 @@ function App() {
                     <Route path="/home-page" element={<HomePage/>}/>
                     
                     {/* Protected Routes */}
+                    <Route
+                        path="/admin-dashboard"
+                        element={
+                            <ProtectedRoute><AdminDashboard/></ProtectedRoute>
+                        }
+                    />
                     <Route
                         path="/patient-list"
                         element={

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getPatients } from "../Services/api";
 import { useNavigate } from "react-router-dom";
 
+
 function PatientList() {
     const [patients, setPatients] = useState([]);
     const navigate = useNavigate();

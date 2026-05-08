@@ -19,20 +19,26 @@ function Login() {
       //  store token
       localStorage.setItem("token", res.data.access);
 
-      if (role === "doctor") {
+      // fetch profile to get role
+      const profileRes = await axios.get("/api/profile/", {
+        headers: { Authorization: `Bearer ${res.data.access}` },
+      });
+      const role = profileRes.data.role;
+      const isSuperuser = profileRes.data.is_superuser;
+
+      if (role === "admin" || isSuperuser) {
+        navigate("/admin-dashboard");
+      } else if (role === "doctor") {
         navigate("/doctor-list");
-
-      }
-      if (role === "patient") {
+      } else if (role === "patient") {
         navigate("/patient-list");
-      }
-
-      if (role === "admin") {
-        navigate("/admin-list");
+      } else {
+        navigate("/");
       }
 
     } catch (err) {
-      alert("Invalid credentials");
+      alert("Invalid credentials or server error");
+      console.error(err);
     }
   };
 

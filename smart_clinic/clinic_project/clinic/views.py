@@ -20,7 +20,7 @@ def doctor_list(request):
     data = [
         {
             "id": d.id,
-            "username": d.user.username,
+            "username": d.user.username if d.user else getattr(d, 'name', None),
             "specialization": d.specialization,
             "experience": d.experience
         }
@@ -63,7 +63,7 @@ def patient_list(request):
         data = [
             {
                 "id": p.id,
-                "username": p.user.username,
+                "username": p.user.username if p.user else getattr(p, 'name', None),
                 "age": p.age
             }
             for p in patients
@@ -110,10 +110,10 @@ def appointment_list(request):
         data = [
             {
                 "id": a.id,
-                "doctor": a.doctor.user.username,
-                "patient": a.patient.user.username,
+                "doctor": a.doctor.user.username if a.doctor and a.doctor.user else getattr(a.doctor, 'name', None),
+                "patient": a.patient.user.username if a.patient and a.patient.user else getattr(a.patient, 'name', None),
                 "date": a.date,
-                "time": a.time
+                "time": getattr(a, 'time', None)
             }
             for a in appointments
         ]

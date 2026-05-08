@@ -56,7 +56,8 @@ def profile(request):
     return Response({
         "message": "Registration successful",
         "username": request.user.username,
-        "role": request.user.role
+        "role": request.user.role,
+        "is_superuser": request.user.is_superuser
     })
 
 

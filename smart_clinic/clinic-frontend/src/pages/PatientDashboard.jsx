@@ -4,6 +4,9 @@ function PatientDashboard() {
     return (
         <div>
             <h2>Patient Dashboard</h2>
+            <ul>
+
+            </ul>
         </div>
     );
 }

@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
+AUTH_USER_MODEL = 'accounts.User'
 
 INSTALLED_APPS = [
     'django.contrib.admin',

@@ -30,8 +30,8 @@ API.interceptors.response.use(
 export default API;
 
 // API endpoints
-export const getPatients = () => API.get("clinic/patient/");
-export const addPatient = (data) => API.post("clinic/patient/", data);
+export const getPatients = () => API.get("clinic/patients/");
+export const addPatient = (data) => API.post("clinic/patients/", data);
 export const getDoctors = () => API.get("clinic/doctors/");
 // add for registration
 export const registerPatient = (data) =>
