@@ -53,12 +53,29 @@ def register(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def profile(request):
-    return Response({
+    data = {
         "message": "Registration successful",
         "username": request.user.username,
         "role": request.user.role,
-        "is_superuser": request.user.is_superuser
-    })
+        "is_superuser": request.user.is_superuser,
+        "user_id": request.user.id
+    }
+    
+    if request.user.role == 'patient':
+        try:
+            patient = Patient.objects.get(user=request.user)
+            data['patient_id'] = patient.id
+        except Patient.DoesNotExist:
+            pass
+            
+    elif request.user.role == 'doctor':
+        try:
+            doctor = Doctor.objects.get(user=request.user)
+            data['doctor_id'] = doctor.id
+        except Doctor.DoesNotExist:
+            pass
+            
+    return Response(data)
 
 
 @api_view(['GET'])

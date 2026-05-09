@@ -112,6 +112,7 @@ def appointment_list(request):
                 "id": a.id,
                 "doctor": a.doctor.user.username if a.doctor and a.doctor.user else getattr(a.doctor, 'name', None),
                 "patient": a.patient.user.username if a.patient and a.patient.user else getattr(a.patient, 'name', None),
+                "patient_age": getattr(a.patient, 'age', None),
                 "date": a.date,
                 "time": getattr(a, 'time', None)
             }
@@ -126,7 +127,7 @@ def appointment_list(request):
         if serializer.is_valid():
             doctor = serializer.validated_data['doctor']
             date = serializer.validated_data['date']
-            time = serializer.validated_data['time']
+            time = serializer.validated_data.get('time')
 
             # to prevent double booking
             if Appointment.objects.filter(doctor=doctor, date=date, time=time).exists():

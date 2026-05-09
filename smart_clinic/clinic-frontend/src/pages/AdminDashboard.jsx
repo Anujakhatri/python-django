@@ -19,7 +19,7 @@ function AdminDashboard() {
 
             <button onClick={() => {
                 localStorage.removeItem("token");
-                navigate("/login");
+                navigate("/");
             }}>
                 Logout
             </button>

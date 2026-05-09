@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ role }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -19,19 +19,27 @@ function Login() {
       //  store token
       localStorage.setItem("token", res.data.access);
 
-      // fetch profile to get role
       const profileRes = await axios.get("/api/profile/", {
         headers: { Authorization: `Bearer ${res.data.access}` },
       });
-      const role = profileRes.data.role;
+      const userRole = profileRes.data.role;
       const isSuperuser = profileRes.data.is_superuser;
 
-      if (role === "admin" || isSuperuser) {
-        navigate("/admin-dashboard");
-      } else if (role === "doctor") {
-        navigate("/doctor-list");
-      } else if (role === "patient") {
-        navigate("/patient-list");
+      if (isSuperuser) {
+        navigate("/admin");
+        return;
+      }
+
+      if (role && userRole !== role) {
+        alert(`Error: You are trying to log in as a ${role}, but you are registered as a ${userRole}.`);
+        localStorage.removeItem("token");
+        return;
+      }
+
+      if (userRole === "doctor") {
+        navigate("/doctor-dashboard");
+      } else if (userRole === "patient") {
+        navigate("/patient-dashboard");
       } else {
         navigate("/");
       }
@@ -44,7 +52,7 @@ function Login() {
 
   return (
     <form onSubmit={handleLogin}>
-      <h2>Login</h2>
+      <h2>{role ? `${role.charAt(0).toUpperCase() + role.slice(1)} Login` : "Login"}</h2>
 
       <input
         placeholder="Username"

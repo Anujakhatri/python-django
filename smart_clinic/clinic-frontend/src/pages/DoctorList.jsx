@@ -22,19 +22,35 @@ function DoctorList() {
     //logout button
     const handleLogout = () => {
         localStorage.removeItem("token");
-        navigate("/login");
+        navigate("/");
     };
+    const handleDoctorClick = (doctor) => {
+        // Placeholder for future navigation or modal logic
+        console.log(`Clicked on Doctor: ${doctor.username}`);
+    };
+
     return (
-        <div>
-            <h2>Doctor List</h2>
-            <button onClick={handleLogout}>Logout</button>
-            {Doctors.map((p) => (
-                <div key={p.id}>
-                    <p>
-                        {p.username} - {p.specialization}
-                    </p>
-                </div>
-            ))}
+        <div className="container mt-5">
+            <div className="d-flex justify-content-between align-items-center mb-4">
+                <h2>Doctor List</h2>
+                <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+            </div>
+            
+            <div className="list-group">
+                {Doctors.map((p) => (
+                    <button 
+                        key={p.id} 
+                        onClick={() => handleDoctorClick(p)}
+                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                    >
+                        <div>
+                            <h5 className="mb-1">{p.username}</h5>
+                            <small className="text-muted">{p.specialization}</small>
+                        </div>
+                        <span className="badge bg-primary rounded-pill">View</span>
+                    </button>
+                ))}
+            </div>
         </div>
     );
 }

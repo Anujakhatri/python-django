@@ -19,9 +19,9 @@ API.interceptors.request.use((req) => {
 //refresh the token
 API.interceptors.response.use(
   (response) => response, async (error) => {
-    if (error.response?.data?.code === "token_not_valid") {
+    if (error.response && error.response.status === 401) {
       localStorage.removeItem("token");
-      window.location.href = "/login";
+      window.location.href = "/";
     }
     return Promise.reject(error);
   }
@@ -39,3 +39,7 @@ export const registerPatient = (data) =>
 
 export const registerDoctor = (data) =>
   API.post("clinic/doctors/", data);
+
+export const getAppointments = () => API.get("clinic/appointments/");
+export const addAppointment = (data) => API.post("clinic/appointments/", data);
+export const getProfile = () => API.get("profile/");

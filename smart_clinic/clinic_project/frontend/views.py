@@ -4,8 +4,11 @@ from django.shortcuts import render
 def home(request):
     return render(request,'index.html')
 
-def login_page(request):
-    return render(request,'login.html')
+def patient_login_page(request):
+    return render(request, 'patient_login.html')
+
+def doctor_login_page(request):
+    return render(request, 'doctor_login.html')
 
 def register_page(request):
     return render(request, 'register.html')

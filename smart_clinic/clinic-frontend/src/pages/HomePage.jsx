@@ -8,11 +8,11 @@ function HomePage() {
         <h2>Home Page</h2>
         <ul>
 
-            <li><Link to="/login">Admin Dashboard</Link></li>
+            <li><Link to="/patient-login">Patient Login</Link></li>
+            <li><Link to="/doctor-login">Doctor Login</Link></li>
+            <li><Link to="/admin-login">Admin Login</Link></li>
             <li><Link to="/register">Patient Registration </Link></li>
             <li><Link to="/register_doctor">Doctor Registration </Link></li>
-            <li><Link to="/doctor-list">Doctor List </Link></li>
-            <li><Link to="/patient-list">Patient List</Link></li>
         </ul>
     </div>
     );
